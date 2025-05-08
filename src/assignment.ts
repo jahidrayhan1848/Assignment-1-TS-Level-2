@@ -12,28 +12,7 @@
        } 
 
     }
-      formatString("Hello");  
-      formatString("Hello", true);
-      formatString("Hello", false); 
-    
-   
-
-
-     // problem -2 
-
-    interface Book {
-        title: string;
-        rating: number;
-
-    }
-
-    const books = [
-  { title: "Book A", rating: 4.5 },
-  { title: "Book B", rating: 3.2 },
-  { title: "Book C", rating: 3.0 }
-];
-
-
+      
 
     function filterByRating(items: Book[]) : Book [] {
         const result = items.filter((item) => item.rating >= 4)
@@ -42,10 +21,8 @@
     }
 
 
-    const res1 = filterByRating(books);
-    // console.log(res1);
-
-     // problem -3 
+   
+    
 
  
 
@@ -60,10 +37,8 @@
 
 
     }
-    const res2 = concatenateArrays([],[],[]);      
-    // console.log(res2);
-
-     // problem -4
+ 
+  
     class Vehicle {
         private make: string;
          private year: number;
@@ -96,9 +71,9 @@
 
     }
 
-    const myCar = new Car("Toyota", 2020, "Corolla");
 
-  // problem -5
+
+ 
     function processValue(value : string | number) : number   {
         
         const result = typeof value === 'string' ? value.length : value * 2;
@@ -106,16 +81,11 @@
         
     
     }
-    const res3 = processValue(23);
-    // console.log(res3);
+ 
 
-     // problem -6 
+  
 
-    interface Product {
-        name : string;
-        price : number;
-
-    }
+   
     function getMostExpensiveProduct(products: Product[] ): Product[] | null {
         
         if (products.length === 0) {
@@ -135,16 +105,10 @@
        
     
     }
-     const products = [
-  { name: "Pen", price :100 },
-  { name: "Notebook", price:50 },
-  { name: "Bag", price: 100 }
-];
-    const result4 = getMostExpensiveProduct(products)
-    // console.log(result4);
+ 
+   
 
-
-     // Problem 7:
+    
 
     enum Day {
          Monday,
@@ -165,11 +129,8 @@
 
     }
 
-    const res8 = getDayType(Day.Sunday);
-    // console.log(res8);
 
-
-      // problem -8
+ 
 
     async function squareAsync(n: number): Promise<number> {
         return await new Promise((resolve, reject) => {
@@ -185,8 +146,7 @@
          })
     }
 
-    const res10 =   squareAsync(3).then(console.error);
-    // console.log(res10);
+   
 
    
 
