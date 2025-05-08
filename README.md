@@ -78,4 +78,6 @@ const personAge = getProperty(person, "age");
 Generic function, টাইপ চেকিং, mapped type ইত্যাদিতে
 টাইপ সেফটি, ভুল key ইউজ রোধ, উন্নত কোড বুদ্ধিমত্তা
 
+                thank You
+
 
