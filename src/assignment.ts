@@ -129,22 +129,15 @@
  
 
     async function squareAsync(n: number): Promise<number> {
-        return await new Promise((resolve, reject) => {
-            
-            setTimeout(() => {
-                if (n < 0) {
-                reject("Negative number not allowed")
-            }
-            else {
-                resolve(n *n)
-            }
-           },1000)
-         })
+      if (n < 0) {
+    throw new Error("Negative number not allowed");
+  }
+
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(n * n);
+    }, 1000); 
+  });
     }
-
-   
-
-   
-
 
 }
