@@ -1,0 +1,123 @@
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+{
+    //    problem -1 
+    function formatString(input, upper) {
+        if (upper === true || upper === undefined) {
+            const result = input.toUpperCase();
+            return result;
+        }
+        else {
+            const low = input.toLowerCase();
+            return low;
+        }
+    }
+    const res = formatString("Hello", true);
+    const books = [
+        { title: "Book A", rating: 4.5 },
+        { title: "Book B", rating: 3.2 },
+        { title: "Book C", rating: 3.0 }
+    ];
+    function filterByRating(items) {
+        const result = items.filter((item) => item.rating >= 4);
+        return result;
+    }
+    const res1 = filterByRating(books);
+    // console.log(res1);
+    // problem -3 
+    function concatenateArrays(...arrays) {
+        const newArray = [];
+        for (const arr of arrays) {
+            newArray.push(...arr);
+        }
+        return newArray;
+    }
+    const res2 = concatenateArrays([], [], []);
+    // console.log(res2);
+    // problem -4
+    class Vehicle {
+        constructor(make, year) {
+            this.make = make;
+            this.year = year;
+        }
+        getInfo() {
+            return `Make : ${this.make}, Year: ${this.year}`;
+        }
+    }
+    class Car extends Vehicle {
+        constructor(make, year, modal) {
+            super(make, year);
+            this.modal = modal;
+        }
+        getModel() {
+            return `Modal: ${this.modal}`;
+        }
+    }
+    const myCar = new Car("Toyota", 2020, "Corolla");
+    // problem -5
+    function processValue(value) {
+        const result = typeof value === 'string' ? value.length : value * 2;
+        return result;
+    }
+    const res3 = processValue(23);
+    function getMostExpensiveProduct(products) {
+        if (products.length === 0) {
+            return null;
+        }
+        else {
+            const filterArray = products.map(pd => { var _a; return (_a = pd.price) !== null && _a !== void 0 ? _a : 0; });
+            const Max = Math.max(...filterArray);
+            const highestPrice = products.filter((pd) => pd.price === Max);
+            return highestPrice;
+        }
+    }
+    const products = [
+        { name: "Pen", price: 100 },
+        { name: "Notebook", price: 50 },
+        { name: "Bag", price: 100 }
+    ];
+    const result4 = getMostExpensiveProduct(products);
+    // console.log(result4);
+    // Problem 7:
+    let Day;
+    (function (Day) {
+        Day[Day["Monday"] = 0] = "Monday";
+        Day[Day["Tuesday"] = 1] = "Tuesday";
+        Day[Day["Wednesday"] = 2] = "Wednesday";
+        Day[Day["Thursday"] = 3] = "Thursday";
+        Day[Day["Friday"] = 4] = "Friday";
+        Day[Day["Saturday"] = 5] = "Saturday";
+        Day[Day["Sunday"] = 6] = "Sunday";
+    })(Day || (Day = {}));
+    function getDayType(day) {
+        const result = (day === Day.Saturday || day === Day.Sunday) ? "Weekend" : "Weekday";
+        return result;
+    }
+    const res8 = getDayType(Day.Sunday);
+    // console.log(res8);
+    // problem -8
+    function squareAsync(n) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (n < 0) {
+                        reject("Negative number not allowed");
+                    }
+                    else {
+                        resolve(n * n);
+                    }
+                }, 1000);
+            });
+        });
+    }
+    const res10 = squareAsync(-3).catch(console.error);
+    console.log(res10);
+}
