@@ -9,7 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 {
-    //    problem -1 
     function formatString(input, upper) {
         if (upper === true || upper === undefined) {
             const result = input.toUpperCase();
@@ -20,7 +19,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             return low;
         }
     }
-    const res = formatString("Hello", true);
+    const res = formatString("Hello");
+    const ress = formatString("Hello", true);
+    const resss = formatString("Hello", false);
+    console.log(res, ress, resss);
     const books = [
         { title: "Book A", rating: 4.5 },
         { title: "Book B", rating: 3.2 },
@@ -118,6 +120,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             });
         });
     }
-    const res10 = squareAsync(-3).catch(console.error);
+    const res10 = squareAsync(3).then(console.error);
     console.log(res10);
 }

@@ -1,6 +1,5 @@
 {
 
- //    problem -1 
     function formatString(input: string, upper?: boolean) {
     
         if (upper === true || upper=== undefined) {
@@ -13,8 +12,11 @@
        } 
 
     }
-    const res =formatString("Hello", true)
-    // console.log(res);
+      formatString("Hello");  
+      formatString("Hello", true);
+      formatString("Hello", false); 
+    
+   
 
 
      // problem -2 
@@ -171,6 +173,7 @@
 
     async function squareAsync(n: number): Promise<number> {
         return await new Promise((resolve, reject) => {
+            
             setTimeout(() => {
                 if (n < 0) {
                 reject("Negative number not allowed")
@@ -182,8 +185,8 @@
          })
     }
 
-    const res10 =   squareAsync(-3).catch(console.error);
-    console.log(res10);
+    const res10 =   squareAsync(3).then(console.error);
+    // console.log(res10);
 
    
 
